@@ -154,7 +154,7 @@ const bingo = {
             this.newGame();
            };
 
-        this.newBall();  
+         
     },
 
 
@@ -163,7 +163,7 @@ const bingo = {
             if(con){
               this.playGame();
             }else{
-                return;
+                return false;
             }  
    },
 
@@ -210,15 +210,17 @@ const bingo = {
         this.getNewCarton()
         this.copyObj()
         let c = prompt(`Are you happy with this Ticket?\n1--YES\n2--NO`)
-        if(c === '1'){
-            this._data.user.points === 0 ? this._data.user.points = 100 : this._data.user.points = 100
-            this.playGame()
-        }else if(c === '2'){
-            this._data.carton.original.length = 0
-            this.chooseTicket()
+        if(c){
+            if(c === '1'){
+                this._data.user.points === 0 ? this._data.user.points = 100 : this._data.user.points = 100
+                this.playGame()
+            }else if(c === '2'){
+                this._data.carton.original.length = 0
+                this.chooseTicket()
+            };
         }else{
             return;
-        }
+        };
    },
 
    gameFlow(){
@@ -230,7 +232,8 @@ const bingo = {
 
     playGame(){
         this.getRandomNumber();
-        this.checkIfMatch();  
+        this.checkIfMatch();
+        this.newBall();   
     },
     
 };
