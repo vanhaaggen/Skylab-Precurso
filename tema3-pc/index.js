@@ -94,14 +94,32 @@ const bingo = {
     },
 
     getNewCarton(){
-        let newCarton = Array.from({length: 15}, (v, i) => Math.floor(Math.random() * 15 + 1));        
+        let numArr = []; 
+        let count = 1;
+        for(let i = 0 ; i < 50; i++){
+                numArr.push(count++)
+        };
+        //Fisher and Yates shuffle algorithm-----------------------
+        let currentIndex = numArr.length, temporaryValue, randomIndex;
+        while(0 !== currentIndex){
+         
+          randomIndex = Math.floor(Math.random()* currentIndex)
+          currentIndex -= 1;
+          
+          temporaryValue = numArr[currentIndex];
+          numArr[currentIndex] = numArr[randomIndex];
+          numArr[randomIndex] = temporaryValue; 
+        }
+        //----------------------------------------------------------
+        let newCarton = numArr.slice(0, 15)
+        newCarton = newCarton.flat();
         while (newCarton.length) {
             this._data.carton.original.push(newCarton.splice(0,5));
         }; 
         let w = this._data.carton.original
         console.log(`%cYour Ticket\n%c${w.map(x => `|${x.join('|')}|`).join('\n')}`,s5,s3)
     },
-    
+    //Array.from({length: 15}, (v, i) => Math.floor(Math.random() * 15 + 1));
 
     points(){
         let c = this._data.carton.copy;
