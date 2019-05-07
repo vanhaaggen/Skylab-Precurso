@@ -19,7 +19,7 @@ let ask = prompt("Would you like to calculate again? y/n");
 
 
 const saveResults = []
-
+const stringArr = [];
 let functionCall = 0;
 
 function calculator(){
@@ -33,15 +33,16 @@ function calculator(){
   		console.log(saveResults.join('\n'));
 
   	} else {
-  		numberMeBo = [...numberMeBo].filter(element => element != ',').map((x) => 	parseInt(x,10)); 
+			let strToArr = stringArr.push(...numberMeBo.split(','));
+			let typeNumber = stringArr.map(x => parseInt(x , 10)) 
 
-		let sum = `Sum = ${numberMeBo.reduce((acc, curVal) => acc + curVal)}`;
-  		let sub = `Substraction = ${numberMeBo.reduce((acc, curVal) => acc - curVal)}`;
-  		let mult = `Multiplication = ${numberMeBo.reduce((acc, curVal) => acc * curVal)}`;
-  		let div = `Division = ${numberMeBo.reduce((acc, curVal) => acc / curVal).toFixed(2)}`;
+		  let sum = `Sum = ${typeNumber.reduce((acc, curVal) => acc + curVal)}`;
+  		let sub = `Substraction = ${typeNumber.reduce((acc, curVal) => acc - curVal)}`;
+  		let mult = `Multiplication = ${typeNumber.reduce((acc, curVal) => acc * curVal)}`;
+  		let div = `Division = ${typeNumber.reduce((acc, curVal) => acc / curVal).toFixed(2)}`;
 
 	functionCall++;
-
+		stringArr.length = 0
   	saveResults.push(`Calculation number ${functionCall}`,sum,sub,mult,div,'');
 
 	console.log(saveResults.join('\n'))

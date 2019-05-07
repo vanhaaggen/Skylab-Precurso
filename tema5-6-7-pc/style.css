@@ -1,0 +1,126 @@
+html{
+	box-sizing: border-box;
+}
+*,*:before, *:after{
+	box-sizing: inherit;
+}
+
+body{
+	background-color: #62686d;
+}
+
+input{
+	min-width: 0;
+	grid-column: 1/5;
+	background-color: #283137;
+	border: none;
+	border-radius: 15px;
+	font-size: 70px;
+	color: #f2f0dc;
+	border-bottom: 1px solid #323d44;
+}
+
+.grid-container{
+	margin: 35px auto !important;
+	display: grid;
+	grid-template-columns: 0.5fr 0.5fr 0.5fr 0.5fr;
+	grid-template-rows: 2fr 1fr 1fr 1fr 1fr 1fr;
+	grid-gap: 10px;
+	padding: 15px;
+	height: 600px;
+	width: 450px;
+	border-radius: 15px;
+	background-color: #232628 ;
+	box-shadow: 0 20px #121415;
+	border-bottom: 2px solid #33383a;
+}
+
+.grid-container > button {
+	border: none;
+	text-align: center;
+	border-radius: 15px;
+	font-size: 30px;
+		
+}
+
+.zero {
+	grid-column: 1 / 3;
+}
+
+/*--------------------------------*/
+#operator{
+	
+	box-shadow: 0 4px #906ad8;
+	background-color: #fc5c94;
+	color: #c1f161;
+}
+#operator:hover{
+	background-color:#e85387;
+	box-shadow: 0 3px #7e5dbf;
+	top: 2px;
+	color:#afdb57;
+}
+#operator:active{
+	border: 1px solid #c1f161;
+	box-shadow: 0 0 #5d448e;
+	top 6px;
+	color: #c1f161;
+}
+
+/*--------------------------------*/
+#numbers{
+	background-color: #abaa98;
+	box-shadow: 0 4px #906ad8;
+	color: #82d2e0;
+}
+#numbers:hover{
+	background-color: #969584;
+	box-shadow: 0 3px #7e5dbf;
+	top: 2px;
+	color: #76bec9;
+}
+#numbers:active{
+	border: 1px solid #8de6f7;
+	box-shadow: 0 0  #5d448e;
+	top 6px;
+	color: #8de6f7;
+	
+}
+
+/*------------------------------*/
+#other{
+	
+	box-shadow:  0 4px #906ad8;
+	background-color: #c1f161;
+	color: #ae81ff;
+}
+#other:hover{
+	background-color: #afdb57;
+	box-shadow: 0 3px #7e5dbf;
+	top: 2px;
+	color: #9c74e8;
+}
+#other:active{
+	border: 1px solid #ae81ff;
+	box-shadow: 0 0 #5d448e;
+	top 6px;
+	color: #ae81ff;
+}
+/*------------------------------*/
+.equal{
+	background-color: #8de6f7;
+	box-shadow:  0 4px #906ad8;
+	color: #fc5c94;
+}
+.equal:hover{
+	background-color: #76bec9;
+	box-shadow: 0 3px #7e5dbf;
+	top: 2px;
+	color: #e85387;
+}
+.equal:active{
+	border: 1px solid #fc5c94;
+	box-shadow: 0 0 #5d448e;
+	top 6px;
+	color: #fc5c94;
+}
